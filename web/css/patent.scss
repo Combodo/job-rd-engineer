@@ -12,6 +12,7 @@ $patent-grid-secondary-width: 10px;
 
 $brick-width: 5em;
 $brick-height: 2em;
+$brick-color-default: #444;
 $brick-bg-color-default: $white;
 $brick-knob-height: 5px;
 $brick-knob-width: 10px;
@@ -62,13 +63,21 @@ $brick-knob-spacing: 10px;
 		}
 
 		.patent-bricks{
+			position: absolute;
+			top: 20em;
+			left: 0em;
+
 			.patent-brick{
 				position: absolute;
 				/* Must be overloaded by each brick to be properly positioned */
 				top: 0;
-				right: 0;
+				left: 0;
 				width: $brick-width;
 				height: $brick-height;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $brick-color-default;
 				background-color: $brick-bg-color-default;
 
 				&::before{

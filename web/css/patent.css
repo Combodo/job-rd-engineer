@@ -41,13 +41,22 @@
   top: 0;
   left: 0;
 }
+.patent-wrapper .patent-content .patent-bricks {
+  position: absolute;
+  top: 20em;
+  left: 0em;
+}
 .patent-wrapper .patent-content .patent-bricks .patent-brick {
   position: absolute;
   /* Must be overloaded by each brick to be properly positioned */
   top: 0;
-  right: 0;
+  left: 0;
   width: 5em;
   height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #444;
   background-color: #fff;
 }
 .patent-wrapper .patent-content .patent-bricks .patent-brick::before {

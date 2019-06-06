@@ -1,13 +1,29 @@
 /* Copyright: Based on 0ritzy0 work on codepen https://codepen.io/0ritzy0/pen/DGcji */
 
-$yellow:     #f9df1c; /* Yellow */
-$yellow-dark:#ecd107; /* Dark Yellow */
-$shirt:      #2c3e50; /* Blue */
-$sleeve:     #95a5a6; /* Gray */
-$cuff:       #7f8c8d; /* Dark Gray */
-$pants:      #e74c3c; /* Red */
-$pants-dark: #c0392b; /* Dark Red */
+$skin:     #f9df1c; /* Yellow */
+$skin-dark:#ecd107; /* Dark Yellow */
+$shirt:      #2f405f; /* Blue */
+$sleeve:     $shirt; /* Blue */
+$cuff:       lighten($sleeve, 5%); /* Blue */
+$pants:      #c89f8d; /* Camel */
+$pants-dark: darken($pants, 8%); /* Dark camel */
 $black:      #303030; /* Black */
+$shoes:		 #ffffff; /* White */
+$shoes-dark: #eae7df; /* Light grey */
+
+:root{
+	--legoman-skin-color: #{$skin};
+	--legoman-skin-dark-color: #{$skin-dark};
+	--legoman-eye-color: #{$black};
+	--legoman-lips-color: #{$black};
+	--legoman-shirt-color: #{$shirt};
+	--legoman-sleeve-color: #{$sleeve};
+	--legoman-cuff-color: #{$cuff};
+	--legoman-pants-color: #{$pants};
+	--legoman-pants-dark-color: #{$pants-dark};
+	--legoman-shoes-color: #{$shoes};
+	--legoman-shoes-dark-color: #{$shoes-dark};
+}
 
 .patent-shape{
 	*:before,
@@ -21,22 +37,22 @@ $black:      #303030; /* Black */
 		zoom: 1.1;
 		width: 103px;
 		height: 83px;
-		background: $yellow;
+		background: var(--legoman-skin-color);
 		margin: 50px auto 0;
 		border-radius: 25px / 20px;
 		box-shadow:
-				0 -44px 0 -28px $yellow-dark,
-				0 32px 0 -22px $yellow-dark;
+				0 -44px 0 -28px var(--legoman-skin-dark-color),
+				0 32px 0 -22px var(--legoman-skin-dark-color);
 		position: relative;
 		/* Eyes */
 		&:before{
-			background: $black;
+			background: var(--legoman-eye-color);
 			width: 13px;
 			height: 13px;
 			top: 24px;
 			left: 28px;
 			border-radius: 100%;
-			box-shadow: 33px 0 0 0 $black;
+			box-shadow: 33px 0 0 0 var(--legoman-eye-color);
 		}
 		/* Mouth */
 		&:after{
@@ -44,7 +60,7 @@ $black:      #303030; /* Black */
 			left: 32px;
 			width: 38px;
 			height: 10px;
-			border: 5px solid $black;
+			border: 5px solid var(--legoman-lips-color);
 			border-top: 0;
 			border-radius: 0 0 20px 20px / 0 0 10px 10px;
 		}
@@ -53,7 +69,7 @@ $black:      #303030; /* Black */
 	#legoman-body{
 		margin: 22px auto 0;
 		width: 158px;
-		border-bottom: 116px solid $shirt;
+		border-bottom: 116px solid var(--legoman-shirt-color);
 		border-left: 22px solid transparent;
 		border-right: 22px solid transparent;
 		position: relative;
@@ -61,7 +77,7 @@ $black:      #303030; /* Black */
 		&:before{
 			top: -12px;
 			left: 0px;
-			background: $shirt;
+			background: var(--legoman-shirt-color);
 			border-radius: 20px 20px 0 0;
 			height: 12px;
 			width: 114px;
@@ -72,7 +88,7 @@ $black:      #303030; /* Black */
 			height: 75px;
 			border-radius: 100%;
 			margin: auto;
-			background: $sleeve;
+			background: var(--legoman-sleeve-color);
 			top: 10px; right: 0; left: 0;
 		}
 	}
@@ -90,7 +106,7 @@ $black:      #303030; /* Black */
 		width: 40px;
 		height: 77px;
 		border-radius: 60px 30px 0 0;
-		background: $sleeve;
+		background: var(--legoman-sleeve-color);
 		top: -8px;
 		/* Lower Sleeve */
 		&:before{
@@ -105,7 +121,7 @@ $black:      #303030; /* Black */
 			border-radius: 100%;
 			height: 12px;
 			width: 40px;
-			background: $cuff;
+			background: var(--legoman-cuff-color);
 			top: 105px;
 			left: 11px;
 		}
@@ -150,22 +166,22 @@ $black:      #303030; /* Black */
 		height: 52px;
 		border-radius: 100%;
 		border-style: solid;
-		border-color: $yellow $yellow transparent;
+		border-color: var(--legoman-skin-color) var(--legoman-skin-color) transparent;
 		border-width: 12px 10px 10px;
 		position: relative;
 		/* Finger Tips */
 		&:before{
 			border-radius: inherit;
-			background: $yellow;
+			background: var(--legoman-skin-color);
 			height: 10px;
 			width: 10px;
 			top: 25px;
 			left: -3px;
-			box-shadow: 26px 0 0 0 $yellow;
+			box-shadow: 26px 0 0 0 var(--legoman-skin-color);
 		}
 		/* Wrists */
 		&:after{
-			background: $yellow;
+			background: var(--legoman-skin-color);
 			height: 24px;
 			width: 30px;
 			border-radius: 60px / 20px;
@@ -175,20 +191,20 @@ $black:      #303030; /* Black */
 	}
 
 	#legoman-pants{
-		background: $pants;
+		background: var(--legoman-pants-color);
 		height: 24px;
 		width: 158px;
 		position: relative;
 		margin: 0 auto;
-		box-shadow: 0 24px 0 0 $pants-dark,
-		0 48px 0 0 $pants-dark;
+		box-shadow: 0 24px 0 0 var(--legoman-pants-dark-color),
+		0 48px 0 0 var(--legoman-pants-dark-color);
 		&:before{
 			background: inherit;
 			height: 50px;
 			border-radius: 0 0 5px 5px;
-			width: 18px;
+			width: 7px;
 			top: 22px;
-			left: 70px;
+			left: 75px;
 		}
 
 		&:after{
@@ -196,11 +212,11 @@ $black:      #303030; /* Black */
 			width: 76px;
 			height: 68px;
 			background: inherit;
-			box-shadow: 82px 0 0 0 $pants,
-			82px 6px 0 0 $pants-dark,
-			82px 22px 0 0 $pants,
-			0 6px 0 0 $pants-dark,
-			0 22px 0 0 $pants;
+			box-shadow: 82px 0 0 0 var(--legoman-pants-color),
+			82px 6px 0 0 var(--legoman-shoes-dark-color),
+			82px 22px 0 0 var(--legoman-shoes-color),
+			0 6px 0 0 var(--legoman-shoes-dark-color),
+			0 22px 0 0 var(--legoman-shoes-color);
 		}
 	}
 }

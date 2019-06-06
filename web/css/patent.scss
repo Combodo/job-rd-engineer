@@ -9,6 +9,7 @@ $patent-grid-primary-color: rgba(255, 255, 255, 0.5);
 $patent-grid-secondary-color: rgba(255, 255, 255, 0.3);
 $patent-grid-primary-width: 50px;
 $patent-grid-secondary-width: 10px;
+$patent-border: 2px solid $patent-grid-primary-color;
 
 
 .patent-wrapper{
@@ -18,7 +19,10 @@ $patent-grid-secondary-width: 10px;
 	background-color: $patent-bg-color;
 
 	.patent-content{
-		border: 2px solid $patent-grid-primary-color;
+		position: relative;
+		padding: 3em 0;
+		min-height: 35em;
+		border: $patent-border;
 		background-size: $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-secondary-width $patent-grid-secondary-width, $patent-grid-secondary-width $patent-grid-secondary-width;
 		background-position: -24px -24px, -24px -24px, -1px -4px, -4px -1px;
 		background-image: linear-gradient($patent-grid-primary-color 1px, transparent 1px), linear-gradient(90deg, $patent-grid-primary-color 1px, transparent 1px), linear-gradient($patent-grid-secondary-color 1px, transparent 1px), linear-gradient(90deg, $patent-grid-secondary-color 1px, transparent 1px);
@@ -26,6 +30,33 @@ $patent-grid-secondary-width: 10px;
 		.patent-shape{
 			position: relative;
 			z-index: 0;
+		}
+
+		.patent-topics{
+			.patent-topic{
+				position: absolute;
+				/* Must be overwritten by each topic to be properly positioned */
+				top: 0;
+				left: 0;
+			}
+		}
+
+		.patent-qrcode,
+		.patent-company{
+			position: absolute;
+			bottom: 0;
+			padding: 0.5em;
+			background-color: $patent-bg-color;
+			border: $patent-border;
+			border-bottom: none;
+		}
+		.patent-qrcode{
+			left: 0;
+			border-left: none;
+		}
+		.patent-company{
+			right: 0;
+			border-right: none;
 		}
 	}
 }

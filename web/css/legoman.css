@@ -2,11 +2,27 @@
 /* Yellow */
 /* Dark Yellow */
 /* Blue */
-/* Gray */
-/* Dark Gray */
-/* Red */
-/* Dark Red */
+/* Blue */
+/* Blue */
+/* Camel */
+/* Dark camel */
 /* Black */
+/* White */
+/* Light grey */
+:root {
+  --legoman-skin-color: #f9df1c;
+  --legoman-skin-dark-color: #ecd107;
+  --legoman-eye-color: #303030;
+  --legoman-lips-color: #303030;
+  --legoman-shirt-color: #2f405f;
+  --legoman-sleeve-color: #2f405f;
+  --legoman-cuff-color: #374b70;
+  --legoman-pants-color: #c89f8d;
+  --legoman-pants-dark-color: #bb8871;
+  --legoman-shoes-color: #ffffff;
+  --legoman-shoes-dark-color: #eae7df;
+}
+
 .patent-shape *:before,
 .patent-shape *:after {
   position: absolute;
@@ -17,36 +33,36 @@
   zoom: 1.1;
   width: 103px;
   height: 83px;
-  background: #f9df1c;
+  background: var(--legoman-skin-color);
   margin: 50px auto 0;
   border-radius: 25px/20px;
-  box-shadow: 0 -44px 0 -28px #ecd107, 0 32px 0 -22px #ecd107;
+  box-shadow: 0 -44px 0 -28px var(--legoman-skin-dark-color), 0 32px 0 -22px var(--legoman-skin-dark-color);
   position: relative;
   /* Eyes */
   /* Mouth */
 }
 .patent-shape #legoman-head:before {
-  background: #303030;
+  background: var(--legoman-eye-color);
   width: 13px;
   height: 13px;
   top: 24px;
   left: 28px;
   border-radius: 100%;
-  box-shadow: 33px 0 0 0 #303030;
+  box-shadow: 33px 0 0 0 var(--legoman-eye-color);
 }
 .patent-shape #legoman-head:after {
   top: 50px;
   left: 32px;
   width: 38px;
   height: 10px;
-  border: 5px solid #303030;
+  border: 5px solid var(--legoman-lips-color);
   border-top: 0;
   border-radius: 0 0 20px 20px/0 0 10px 10px;
 }
 .patent-shape #legoman-body {
   margin: 22px auto 0;
   width: 158px;
-  border-bottom: 116px solid #2c3e50;
+  border-bottom: 116px solid var(--legoman-shirt-color);
   border-left: 22px solid transparent;
   border-right: 22px solid transparent;
   position: relative;
@@ -56,7 +72,7 @@
 .patent-shape #legoman-body:before {
   top: -12px;
   left: 0px;
-  background: #2c3e50;
+  background: var(--legoman-shirt-color);
   border-radius: 20px 20px 0 0;
   height: 12px;
   width: 114px;
@@ -66,7 +82,7 @@
   height: 75px;
   border-radius: 100%;
   margin: auto;
-  background: #95a5a6;
+  background: var(--legoman-sleeve-color);
   top: 10px;
   right: 0;
   left: 0;
@@ -85,7 +101,7 @@
   width: 40px;
   height: 77px;
   border-radius: 60px 30px 0 0;
-  background: #95a5a6;
+  background: var(--legoman-sleeve-color);
   top: -8px;
   /* Lower Sleeve */
   /* Inner Sleeve Shadow */
@@ -101,7 +117,7 @@
   border-radius: 100%;
   height: 12px;
   width: 40px;
-  background: #7f8c8d;
+  background: var(--legoman-cuff-color);
   top: 105px;
   left: 11px;
 }
@@ -139,7 +155,7 @@
   height: 52px;
   border-radius: 100%;
   border-style: solid;
-  border-color: #f9df1c #f9df1c transparent;
+  border-color: var(--legoman-skin-color) var(--legoman-skin-color) transparent;
   border-width: 12px 10px 10px;
   position: relative;
   /* Finger Tips */
@@ -147,15 +163,15 @@
 }
 .patent-shape .legoman-hand:before {
   border-radius: inherit;
-  background: #f9df1c;
+  background: var(--legoman-skin-color);
   height: 10px;
   width: 10px;
   top: 25px;
   left: -3px;
-  box-shadow: 26px 0 0 0 #f9df1c;
+  box-shadow: 26px 0 0 0 var(--legoman-skin-color);
 }
 .patent-shape .legoman-hand:after {
-  background: #f9df1c;
+  background: var(--legoman-skin-color);
   height: 24px;
   width: 30px;
   border-radius: 60px/20px;
@@ -163,27 +179,27 @@
   left: 0px;
 }
 .patent-shape #legoman-pants {
-  background: #e74c3c;
+  background: var(--legoman-pants-color);
   height: 24px;
   width: 158px;
   position: relative;
   margin: 0 auto;
-  box-shadow: 0 24px 0 0 #c0392b, 0 48px 0 0 #c0392b;
+  box-shadow: 0 24px 0 0 var(--legoman-pants-dark-color), 0 48px 0 0 var(--legoman-pants-dark-color);
 }
 .patent-shape #legoman-pants:before {
   background: inherit;
   height: 50px;
   border-radius: 0 0 5px 5px;
-  width: 18px;
+  width: 7px;
   top: 22px;
-  left: 70px;
+  left: 75px;
 }
 .patent-shape #legoman-pants:after {
   top: 72px;
   width: 76px;
   height: 68px;
   background: inherit;
-  box-shadow: 82px 0 0 0 #e74c3c, 82px 6px 0 0 #c0392b, 82px 22px 0 0 #e74c3c, 0 6px 0 0 #c0392b, 0 22px 0 0 #e74c3c;
+  box-shadow: 82px 0 0 0 var(--legoman-pants-color), 82px 6px 0 0 var(--legoman-shoes-dark-color), 82px 22px 0 0 var(--legoman-shoes-color), 0 6px 0 0 var(--legoman-shoes-dark-color), 0 22px 0 0 var(--legoman-shoes-color);
 }
 
 /*# sourceMappingURL=legoman.css.map */

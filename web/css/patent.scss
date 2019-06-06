@@ -11,6 +11,14 @@ $patent-grid-primary-width: 50px;
 $patent-grid-secondary-width: 10px;
 $patent-border: 2px solid $patent-grid-primary-color;
 
+$brick-width: 5em;
+$brick-height: 2em;
+$brick-bg-color-default: $white;
+$brick-knob-height: 5px;
+$brick-knob-width: 10px;
+$brick-knob-spacing: 10px;
+
+
 
 .patent-wrapper{
 	margin: auto;
@@ -21,16 +29,16 @@ $patent-border: 2px solid $patent-grid-primary-color;
 	box-shadow: 0 4px 5px 1px rgba(0,0,0,0.3);
 
 	.patent-header{
+		padding-bottom: 0.2rem;
+		margin-bottom: 1rem;
 		font-size: 1.5rem;
 		font-weight: 500;
-		padding-bottom: 0.2rem;
 		border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-		margin-bottom: 0.5rem
 	}
 	.patent-content{
 		position: relative;
 		padding: 3em 0;
-		min-height: 35em;
+		min-height: 40em;
 		border: $patent-border;
 		background-size: $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-secondary-width $patent-grid-secondary-width, $patent-grid-secondary-width $patent-grid-secondary-width;
 		background-position: -24px -24px, -24px -24px, -1px -4px, -4px -1px;
@@ -44,9 +52,32 @@ $patent-border: 2px solid $patent-grid-primary-color;
 		.patent-topics{
 			.patent-topic{
 				position: absolute;
-				/* Must be overwritten by each topic to be properly positioned */
+				/* Must be overloaded by each topic to be properly positioned */
 				top: 0;
 				left: 0;
+			}
+		}
+
+		.patent-bricks{
+			.patent-brick{
+				position: absolute;
+				/* Must be overloaded by each brick to be properly positioned */
+				top: 0;
+				right: 0;
+				width: $brick-width;
+				height: $brick-height;
+				background-color: $brick-bg-color-default;
+
+				&::before{
+					content: "";
+					position: absolute;
+					top: calc(-1 * #{$brick-knob-height});
+					width: 100%;
+					height: $brick-knob-height;
+					background-image: repeating-linear-gradient(90deg, #{$brick-bg-color-default} 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+					background-repeat: repeat;
+					background-position: calc(#{$brick-knob-width} / 2) 0px;
+				}
 			}
 		}
 

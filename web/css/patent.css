@@ -9,16 +9,16 @@
   box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.3);
 }
 .patent-wrapper .patent-header {
+  padding-bottom: 0.2rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 500;
-  padding-bottom: 0.2rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-  margin-bottom: 0.5rem;
 }
 .patent-wrapper .patent-content {
   position: relative;
   padding: 3em 0;
-  min-height: 35em;
+  min-height: 40em;
   border: 2px solid rgba(255, 255, 255, 0.5);
   background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
   background-position: -24px -24px, -24px -24px, -1px -4px, -4px -1px;
@@ -30,9 +30,28 @@
 }
 .patent-wrapper .patent-content .patent-topics .patent-topic {
   position: absolute;
-  /* Must be overwritten by each topic to be properly positioned */
+  /* Must be overloaded by each topic to be properly positioned */
   top: 0;
   left: 0;
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick {
+  position: absolute;
+  /* Must be overloaded by each brick to be properly positioned */
+  top: 0;
+  right: 0;
+  width: 5em;
+  height: 2em;
+  background-color: #fff;
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * 5px);
+  width: 100%;
+  height: 5px;
+  background-image: repeating-linear-gradient(90deg, #fff 0px 10px, transparent 10px calc(10px + 10px));
+  background-repeat: repeat;
+  background-position: calc(10px / 2) 0px;
 }
 .patent-wrapper .patent-content .patent-qrcode,
 .patent-wrapper .patent-content .patent-company {

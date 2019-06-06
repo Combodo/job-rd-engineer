@@ -1,6 +1,7 @@
 ### Idées
 * Faire lever les bras du bonhomme quand on survol le QR Code pour voir plus d'infos ou postuler (En mode => \o/)
 * Si ca fait pas trop charger, est-ce qu'on ferait pas trainer une manette de PS4 dans un coin ?
+* Faire un README.md pour dire a quoi sert ce repo, comment voir l'annonce, ce genre de choses ?
 
 ### A faire
 * L'encart de la société

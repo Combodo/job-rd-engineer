@@ -1,0 +1,18 @@
+.patent-wrapper {
+  padding: 3rem;
+  width: 55rem;
+  color: #fff;
+  background-color: #447ec5;
+}
+.patent-wrapper .patent-content {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -24px -24px, -24px -24px, -1px -4px, -4px -1px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+}
+.patent-wrapper .patent-content .patent-shape {
+  position: relative;
+  z-index: 0;
+}
+
+/*# sourceMappingURL=patent.css.map */

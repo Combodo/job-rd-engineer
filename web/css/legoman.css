@@ -1,4 +1,4 @@
-/* Copyright: 0ritzy0 on https://codepen.io/0ritzy0/pen/DGcji */
+/* Copyright: Based on 0ritzy0 work on codepen https://codepen.io/0ritzy0/pen/DGcji */
 /* Yellow */
 /* Dark Yellow */
 /* Blue */
@@ -7,20 +7,11 @@
 /* Red */
 /* Dark Red */
 /* Black */
-.patent-shape {
-  /* 4 Bars */
-}
-.patent-shape *, .patent-shape *:before, .patent-shape *:after {
-  box-sizing: border-box;
-}
 .patent-shape *:before,
 .patent-shape *:after {
   position: absolute;
   content: "";
   display: block;
-}
-.patent-shape body {
-  background: #f9f9f0;
 }
 .patent-shape #legoman-head {
   zoom: 1.2;
@@ -82,27 +73,11 @@
 }
 .patent-shape #legoman-chest-logo {
   z-index: 4;
-  background: #fff;
-  width: 5px;
-  height: 16px;
   position: absolute;
   margin: auto;
   top: 24px;
   left: 0;
   right: 0;
-  box-shadow: 0 28px 0 0 #fff, -22px 14px 0 0 #fff, 22px 14px 0 0 #fff;
-  /* 2 Squares */
-}
-.patent-shape #legoman-chest-logo:before, .patent-shape #legoman-chest-logo:after {
-  width: 35px;
-  height: 35px;
-  border: 5px solid #fff;
-  left: -15px;
-  transform: rotateX(50deg) rotateZ(45deg);
-  top: -3px;
-}
-.patent-shape #legoman-chest-logo:after {
-  top: 13px;
 }
 .patent-shape .legoman-arm {
   position: absolute;

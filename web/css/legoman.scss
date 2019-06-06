@@ -7,7 +7,7 @@ $skin-dark:#ecd107;
 $shirt:      #2f405f;
 $sleeve:     $shirt;
 $cuff:       lighten($sleeve, 5%);
-$pants:      #c89f8d;
+$pants:      #c49870;
 $pants-dark: darken($pants, 8%);
 $black:      #303030;
 $shoes:		 #ffffff;
@@ -43,7 +43,7 @@ $logo-size: 20px;
 
 	#legoman-head{
 		zoom: 1.1;
-		width: 103px;
+		width: 98px;
 		height: 83px;
 		background: var(--legoman-skin-color);
 		margin: 50px auto 0;
@@ -55,17 +55,17 @@ $logo-size: 20px;
 		/* Eyes */
 		&:before{
 			background: var(--legoman-eye-color);
-			width: 13px;
-			height: 13px;
-			top: 24px;
-			left: 28px;
+			width: 12px;
+			height: 12px;
+			top: 26px;
+			left: 26px;
 			border-radius: 100%;
 			box-shadow: 33px 0 0 0 var(--legoman-eye-color);
 		}
 		/* Mouth */
 		&:after{
-			top: 50px;
-			left: 32px;
+			top: 54px;
+			left: 30px;
 			width: 38px;
 			height: 10px;
 			border: 5px solid var(--legoman-lips-color);
@@ -199,7 +199,8 @@ $logo-size: 20px;
 		position: relative;
 		margin: 0 auto;
 		box-shadow: 0 24px 0 0 var(--legoman-pants-dark-color),
-		0 48px 0 0 var(--legoman-pants-dark-color);
+			0 48px 0 0 var(--legoman-pants-dark-color);
+
 		&:before{
 			background: inherit;
 			height: 50px;
@@ -208,17 +209,16 @@ $logo-size: 20px;
 			top: 22px;
 			left: 75px;
 		}
-
 		&:after{
 			top: 72px;
 			width: 76px;
 			height: 68px;
 			background: inherit;
 			box-shadow: 82px 0 0 0 var(--legoman-pants-color),
-			82px 6px 0 0 var(--legoman-shoes-dark-color),
-			82px 22px 0 0 var(--legoman-shoes-color),
-			0 6px 0 0 var(--legoman-shoes-dark-color),
-			0 22px 0 0 var(--legoman-shoes-color);
+				82px 6px 0 0 var(--legoman-shoes-dark-color),
+				82px 22px 0 0 var(--legoman-shoes-color),
+				0 6px 0 0 var(--legoman-shoes-dark-color),
+				0 22px 0 0 var(--legoman-shoes-color);
 		}
 	}
 }

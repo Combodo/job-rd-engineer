@@ -11,8 +11,8 @@
   --legoman-shirt-color: #2f405f;
   --legoman-sleeve-color: #2f405f;
   --legoman-cuff-color: #374b70;
-  --legoman-pants-color: #c89f8d;
-  --legoman-pants-dark-color: #bb8871;
+  --legoman-pants-color: #c49870;
+  --legoman-pants-dark-color: #b88353;
   --legoman-shoes-color: #ffffff;
   --legoman-shoes-dark-color: #eae7df;
   /* Sizes */
@@ -27,7 +27,7 @@
 }
 .patent-shape #legoman-head {
   zoom: 1.1;
-  width: 103px;
+  width: 98px;
   height: 83px;
   background: var(--legoman-skin-color);
   margin: 50px auto 0;
@@ -39,16 +39,16 @@
 }
 .patent-shape #legoman-head:before {
   background: var(--legoman-eye-color);
-  width: 13px;
-  height: 13px;
-  top: 24px;
-  left: 28px;
+  width: 12px;
+  height: 12px;
+  top: 26px;
+  left: 26px;
   border-radius: 100%;
   box-shadow: 33px 0 0 0 var(--legoman-eye-color);
 }
 .patent-shape #legoman-head:after {
-  top: 50px;
-  left: 32px;
+  top: 54px;
+  left: 30px;
   width: 38px;
   height: 10px;
   border: 5px solid var(--legoman-lips-color);

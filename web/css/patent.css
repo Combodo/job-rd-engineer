@@ -1,5 +1,11 @@
 /* Variables */
 /* - Colors */
+:root {
+  --patent-grid-primary-color: rgba(255, 255, 255, 0.3);
+  --patent-grid-secondary-color: rgba(255, 255, 255, 0.15);
+  --patent-border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
 .patent-wrapper {
   margin: auto;
   padding: 3rem;
@@ -19,10 +25,11 @@
   position: relative;
   padding: 3em 0;
   min-height: 40em;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: var(--patent-border);
   background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-  background-position: -24px -24px, -24px -24px, -1px -4px, -4px -1px;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-position: center center;
+  /*-24px -24px, -24px -24px, -1px -4px, -4px -1px;*/
+  background-image: linear-gradient(var(--patent-grid-primary-color) 1px, transparent 1px), linear-gradient(90deg, var(--patent-grid-primary-color) 1px, transparent 1px), linear-gradient(var(--patent-grid-secondary-color) 1px, transparent 1px), linear-gradient(90deg, var(--patent-grid-secondary-color) 1px, transparent 1px);
 }
 .patent-wrapper .patent-content .patent-shape {
   position: relative;
@@ -59,7 +66,7 @@
   bottom: 0;
   padding: 0.5em;
   background-color: #447ec5;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: var(--patent-border);
   border-bottom: none;
 }
 .patent-wrapper .patent-content .patent-qrcode {

@@ -8,6 +8,13 @@
   background-color: #447ec5;
   box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.3);
 }
+.patent-wrapper .patent-header {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
 .patent-wrapper .patent-content {
   position: relative;
   padding: 3em 0;
@@ -38,7 +45,11 @@
 }
 .patent-wrapper .patent-content .patent-qrcode {
   left: 0;
+  width: 8em;
   border-left: none;
+}
+.patent-wrapper .patent-content .patent-qrcode img {
+  width: 100%;
 }
 .patent-wrapper .patent-content .patent-company {
   right: 0;

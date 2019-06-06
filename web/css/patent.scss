@@ -20,6 +20,13 @@ $patent-border: 2px solid $patent-grid-primary-color;
 	background-color: $patent-bg-color;
 	box-shadow: 0 4px 5px 1px rgba(0,0,0,0.3);
 
+	.patent-header{
+		font-size: 1.5rem;
+		font-weight: 500;
+		padding-bottom: 0.2rem;
+		border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+		margin-bottom: 0.5rem
+	}
 	.patent-content{
 		position: relative;
 		padding: 3em 0;
@@ -54,7 +61,12 @@ $patent-border: 2px solid $patent-grid-primary-color;
 		}
 		.patent-qrcode{
 			left: 0;
+			width: 8em;
 			border-left: none;
+
+			img{
+				width: 100%;
+			}
 		}
 		.patent-company{
 			right: 0;

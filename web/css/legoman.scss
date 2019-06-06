@@ -1,17 +1,22 @@
 /* Copyright: Based on 0ritzy0 work on codepen https://codepen.io/0ritzy0/pen/DGcji */
 
-$skin:     #f9df1c; /* Yellow */
-$skin-dark:#ecd107; /* Dark Yellow */
-$shirt:      #2f405f; /* Blue */
-$sleeve:     $shirt; /* Blue */
-$cuff:       lighten($sleeve, 5%); /* Blue */
-$pants:      #c89f8d; /* Camel */
-$pants-dark: darken($pants, 8%); /* Dark camel */
-$black:      #303030; /* Black */
-$shoes:		 #ffffff; /* White */
-$shoes-dark: #eae7df; /* Light grey */
+/* Variables */
+/* - Colors */
+$skin:     #f9df1c;
+$skin-dark:#ecd107;
+$shirt:      #2f405f;
+$sleeve:     $shirt;
+$cuff:       lighten($sleeve, 5%);
+$pants:      #c89f8d;
+$pants-dark: darken($pants, 8%);
+$black:      #303030;
+$shoes:		 #ffffff;
+$shoes-dark: #eae7df;
+/* - Sizes */
+$logo-size: 20px;
 
 :root{
+	/* Colors */
 	--legoman-skin-color: #{$skin};
 	--legoman-skin-dark-color: #{$skin-dark};
 	--legoman-eye-color: #{$black};
@@ -23,6 +28,9 @@ $shoes-dark: #eae7df; /* Light grey */
 	--legoman-pants-dark-color: #{$pants-dark};
 	--legoman-shoes-color: #{$shoes};
 	--legoman-shoes-dark-color: #{$shoes-dark};
+
+	/* Sizes */
+	--legoman-logo-size: #{$logo-size};
 }
 
 .patent-shape{
@@ -82,22 +90,16 @@ $shoes-dark: #eae7df; /* Light grey */
 			height: 12px;
 			width: 114px;
 		}
-		/* Design */
-		&:after{
-			width: 75px;
-			height: 75px;
-			border-radius: 100%;
-			margin: auto;
-			background: var(--legoman-sleeve-color);
-			top: 10px; right: 0; left: 0;
-		}
 	}
 
 	#legoman-chest-logo{
 		z-index: 4;
 		position: absolute;
-		margin: auto;
-		top: 24px; left: 0; right: 0;
+		top: 15px;
+		right: 15px;
+		background-image: url(../assets/lizard-orange.svg);
+		width: var(--legoman-logo-size);
+		height: var(--legoman-logo-size); /* Same as width as the logo is square */
 	}
 
 	.legoman-arm{

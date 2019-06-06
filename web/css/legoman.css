@@ -1,15 +1,9 @@
 /* Copyright: Based on 0ritzy0 work on codepen https://codepen.io/0ritzy0/pen/DGcji */
-/* Yellow */
-/* Dark Yellow */
-/* Blue */
-/* Blue */
-/* Blue */
-/* Camel */
-/* Dark camel */
-/* Black */
-/* White */
-/* Light grey */
+/* Variables */
+/* - Colors */
+/* - Sizes */
 :root {
+  /* Colors */
   --legoman-skin-color: #f9df1c;
   --legoman-skin-dark-color: #ecd107;
   --legoman-eye-color: #303030;
@@ -21,6 +15,8 @@
   --legoman-pants-dark-color: #bb8871;
   --legoman-shoes-color: #ffffff;
   --legoman-shoes-dark-color: #eae7df;
+  /* Sizes */
+  --legoman-logo-size: 20px;
 }
 
 .patent-shape *:before,
@@ -67,7 +63,6 @@
   border-right: 22px solid transparent;
   position: relative;
   /* Top Collar */
-  /* Design */
 }
 .patent-shape #legoman-body:before {
   top: -12px;
@@ -77,23 +72,15 @@
   height: 12px;
   width: 114px;
 }
-.patent-shape #legoman-body:after {
-  width: 75px;
-  height: 75px;
-  border-radius: 100%;
-  margin: auto;
-  background: var(--legoman-sleeve-color);
-  top: 10px;
-  right: 0;
-  left: 0;
-}
 .patent-shape #legoman-chest-logo {
   z-index: 4;
   position: absolute;
-  margin: auto;
-  top: 24px;
-  left: 0;
-  right: 0;
+  top: 15px;
+  right: 15px;
+  background-image: url(../assets/lizard-orange.svg);
+  width: var(--legoman-logo-size);
+  height: var(--legoman-logo-size);
+  /* Same as width as the logo is square */
 }
 .patent-shape .legoman-arm {
   position: absolute;

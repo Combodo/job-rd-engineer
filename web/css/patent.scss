@@ -9,6 +9,7 @@ $patent-grid-primary-color: rgba(255, 255, 255, 0.3);
 $patent-grid-secondary-color: rgba(255, 255, 255, 0.15);
 $patent-grid-primary-width: 50px;
 $patent-grid-secondary-width: 10px;
+$patent-qr-code-img-bg: $white;
 
 $brick-knob-height: 5px;
 $brick-knob-width: 10px;
@@ -150,11 +151,12 @@ $brick-knob-spacing: 10px;
 		}
 		.patent-qrcode{
 			left: 0;
-			width: 8em;
+			width: 10em;
 			border-left: none;
 
 			img{
 				width: 100%;
+				background-color: $patent-qr-code-img-bg;
 			}
 		}
 		.patent-company{

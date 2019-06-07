@@ -128,11 +128,12 @@
 }
 .patent-wrapper .patent-content .patent-qrcode {
   left: 0;
-  width: 8em;
+  width: 10em;
   border-left: none;
 }
 .patent-wrapper .patent-content .patent-qrcode img {
   width: 100%;
+  background-color: #fff
 }
 .patent-wrapper .patent-content .patent-company {
   right: 0;

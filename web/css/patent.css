@@ -4,6 +4,18 @@
   --patent-grid-primary-color: rgba(255, 255, 255, 0.3);
   --patent-grid-secondary-color: rgba(255, 255, 255, 0.15);
   --patent-border: 2px solid rgba(255, 255, 255, 0.5);
+  --brick-width: 5em;
+  --brick-height: 2em;
+  --brick-color-default: #444;
+  --brick-bg-color-default: #fff;
+  --brick-color-php: #444;
+  --brick-bg-color-php: #fff;
+  --brick-color-xml: #444;
+  --brick-bg-color-xml: #fff;
+  --brick-color-js: #444;
+  --brick-bg-color-js: #fff;
+  --brick-color-tests: #444;
+  --brick-bg-color-tests: #fff;
 }
 
 .patent-wrapper {
@@ -43,21 +55,23 @@
 }
 .patent-wrapper .patent-content .patent-bricks {
   position: absolute;
-  top: 20em;
+  bottom: 10em;
   left: 0em;
 }
 .patent-wrapper .patent-content .patent-bricks .patent-brick {
   position: absolute;
   /* Must be overloaded by each brick to be properly positioned */
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 5em;
-  height: 2em;
+  width: var(--brick-width);
+  height: var(--brick-height);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #444;
-  background-color: #fff;
+  font-weight: 500;
+  /* Must be overloaded by each brick to be properly positioned */
+  color: var(--brick-color-default);
+  background-color: var(--brick-bg-color-default);
 }
 .patent-wrapper .patent-content .patent-bricks .patent-brick::before {
   content: "";
@@ -65,9 +79,43 @@
   top: calc(-1 * 5px);
   width: 100%;
   height: 5px;
-  background-image: repeating-linear-gradient(90deg, #fff 0px 10px, transparent 10px calc(10px + 10px));
+  background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-default) 0px 10px, transparent 10px calc(10px + 10px));
   background-repeat: repeat;
   background-position: calc(10px / 2) 0px;
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-php {
+  color: var(--brick-color-php);
+  background-color: var(--brick-bg-color-php);
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-php::before {
+  background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-php) 0px 10px, transparent 10px calc(10px + 10px));
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-xml {
+  left: var(--brick-width);
+  color: var(--brick-color-xml);
+  background-color: var(--brick-bg-color-xml);
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-xml::before {
+  background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-xml) 0px 10px, transparent 10px calc(10px + 10px));
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-js {
+  bottom: var(--brick-height);
+  left: calc(var(--brick-width) / 2);
+  color: var(--brick-color-js);
+  background-color: var(--brick-bg-color-js);
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-js::before {
+  background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-js) 0px 10px, transparent 10px calc(10px + 10px));
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-tests {
+  transform: rotateZ(35deg);
+  left: calc(var(--brick-width) * 2 * 0.9);
+  bottom: calc(var(--brick-height) * 0.625);
+  color: var(--brick-color-tests);
+  background-color: var(--brick-bg-color-tests);
+}
+.patent-wrapper .patent-content .patent-bricks .patent-brick#patent-brick-tests::before {
+  background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-tests) 0px 10px, transparent 10px calc(10px + 10px));
 }
 .patent-wrapper .patent-content .patent-qrcode,
 .patent-wrapper .patent-content .patent-company {

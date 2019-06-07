@@ -10,10 +10,6 @@ $patent-grid-secondary-color: rgba(255, 255, 255, 0.15);
 $patent-grid-primary-width: 50px;
 $patent-grid-secondary-width: 10px;
 
-$brick-width: 5em;
-$brick-height: 2em;
-$brick-color-default: #444;
-$brick-bg-color-default: $white;
 $brick-knob-height: 5px;
 $brick-knob-width: 10px;
 $brick-knob-spacing: 10px;
@@ -22,6 +18,19 @@ $brick-knob-spacing: 10px;
 	--patent-grid-primary-color: #{$patent-grid-primary-color};
 	--patent-grid-secondary-color: #{$patent-grid-secondary-color};
 	--patent-border: 2px solid rgba(255, 255, 255, 0.5);
+
+	--brick-width: 5em;
+	--brick-height: 2em;
+	--brick-color-default: #444;
+	--brick-bg-color-default: #{$white};
+	--brick-color-php: #444;
+	--brick-bg-color-php: #{$white};
+	--brick-color-xml: #444;
+	--brick-bg-color-xml: #{$white};
+	--brick-color-js: #444;
+	--brick-bg-color-js: #{$white};
+	--brick-color-tests: #444;
+	--brick-bg-color-tests: #{$white};
 }
 
 .patent-wrapper{
@@ -64,21 +73,23 @@ $brick-knob-spacing: 10px;
 
 		.patent-bricks{
 			position: absolute;
-			top: 20em;
+			bottom: 10em;
 			left: 0em;
 
 			.patent-brick{
 				position: absolute;
 				/* Must be overloaded by each brick to be properly positioned */
-				top: 0;
+				bottom: 0;
 				left: 0;
-				width: $brick-width;
-				height: $brick-height;
+				width: var(--brick-width);
+				height: var(--brick-height);
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				color: $brick-color-default;
-				background-color: $brick-bg-color-default;
+				font-weight: 500;
+				/* Must be overloaded by each brick to be properly positioned */
+				color: var(--brick-color-default);
+				background-color: var(--brick-bg-color-default);
 
 				&::before{
 					content: "";
@@ -86,9 +97,44 @@ $brick-knob-spacing: 10px;
 					top: calc(-1 * #{$brick-knob-height});
 					width: 100%;
 					height: $brick-knob-height;
-					background-image: repeating-linear-gradient(90deg, #{$brick-bg-color-default} 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+					background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-default) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
 					background-repeat: repeat;
 					background-position: calc(#{$brick-knob-width} / 2) 0px;
+				}
+
+				&#patent-brick-php{
+					color: var(--brick-color-php);
+					background-color: var(--brick-bg-color-php);
+					&::before{
+						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-php) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+					}
+				}
+				&#patent-brick-xml{
+					left: var(--brick-width);
+					color: var(--brick-color-xml);
+					background-color: var(--brick-bg-color-xml);
+					&::before{
+						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-xml) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+					}
+				}
+				&#patent-brick-js{
+					bottom: var(--brick-height);
+					left: calc(var(--brick-width) / 2);
+					color: var(--brick-color-js);
+					background-color: var(--brick-bg-color-js);
+					&::before{
+						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-js) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+					}
+				}
+				&#patent-brick-tests{
+					transform: rotateZ(35deg);
+					left: calc(var(--brick-width) * 2 * 0.9);
+					bottom: calc(var(--brick-height) * 0.625);
+					color: var(--brick-color-tests);
+					background-color: var(--brick-bg-color-tests);
+					&::before{
+						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-tests) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+					}
 				}
 			}
 		}

@@ -34,6 +34,15 @@ $brick-knob-spacing: 10px;
 	--brick-bg-color-tests: #{$white};
 }
 
+a {
+	&:hover,
+	&:focus,
+	&:visited {
+		color: white;
+		text-decoration: none;
+	}
+}
+
 .container-fluid{
 	height: 100vh;
 	background-color: $patent-bg-color;
@@ -46,146 +55,191 @@ $brick-knob-spacing: 10px;
 .patent-wrapper{
 	margin: auto;
 	padding: 3rem;
-	width: 55rem;
+	width: 64rem;
 	color: $patent-color;
 	background-color: $patent-bg-color;
 	border: solid 4px #bbd1ed47;
-	
-	.patent-header{
-		padding-bottom: 0.2rem;
-		margin-bottom: 1rem;
-		font-size: 1.5rem;
-		font-weight: 500;
-		border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.patent-header{
+	padding-bottom: 0.2rem;
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+.patent-content{
+	position: relative;
+	padding: 3em 0;
+	min-height: 50em;
+	border: var(--patent-border);
+	background-size: $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-secondary-width $patent-grid-secondary-width, $patent-grid-secondary-width $patent-grid-secondary-width;
+	background-position: center center; /*-24px -24px, -24px -24px, -1px -4px, -4px -1px;*/
+	background-image: linear-gradient(var(--patent-grid-primary-color) 1px, transparent 1px), linear-gradient(90deg, var(--patent-grid-primary-color) 1px, transparent 1px), linear-gradient(var(--patent-grid-secondary-color) 1px, transparent 1px), linear-gradient(90deg, var(--patent-grid-secondary-color) 1px, transparent 1px);
+}
+
+.patent-shape{
+	position: relative;
+	z-index: 0;
+}
+
+.patent-topic{
+	position: absolute;
+	/* Must be overloaded by each topic to be properly positioned */
+	top: 0;
+
+	&::before{
+		content: "";
+		display: block;
+		height: 1px;
+		border-bottom: 1px solid white;
+		position: absolute;
 	}
-	.patent-content{
-		position: relative;
-		padding: 3em 0;
-		min-height: 40em;
-		border: var(--patent-border);
-		background-size: $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-primary-width $patent-grid-primary-width, $patent-grid-secondary-width $patent-grid-secondary-width, $patent-grid-secondary-width $patent-grid-secondary-width;
-		background-position: center center; /*-24px -24px, -24px -24px, -1px -4px, -4px -1px;*/
-		background-image: linear-gradient(var(--patent-grid-primary-color) 1px, transparent 1px), linear-gradient(90deg, var(--patent-grid-primary-color) 1px, transparent 1px), linear-gradient(var(--patent-grid-secondary-color) 1px, transparent 1px), linear-gradient(90deg, var(--patent-grid-secondary-color) 1px, transparent 1px);
+}
+#patent-topic-reflexion {
+	top: 12px;
+	left: calc(50% - 340px);
 
-		.patent-shape{
-			position: relative;
-			z-index: 0;
+	&::before{
+		transform: rotateZ(38deg);
+		top: 80px;
+		right: -115px;
+		width: 130px;
+	}
+}
+#patent-topic-team {
+	top: 245px;
+	left: calc(50% - 440px);
+
+	&::before{
+		transform: rotateZ(38deg);
+		top: 58px;
+		right: -53px;
+		width: 60px;
+	}
+}
+#patent-topic-human-experience {
+	top: 115px;
+	left: calc(50% + 150px);
+
+	&::before{
+		transform: rotateZ(-38deg);
+		top: 79px;
+		left: -116px;
+		width: 130px;
+	}
+}
+#patent-topic-products {
+	top: 465px;
+	left: calc(50% + 150px);
+
+	&::before{
+		transform: rotateZ(38deg);
+		top: -1px;
+		left: -116px;
+		width: 130px;
+	}
+}
+.pt-title {
+	border-bottom: 1px solid white;
+	padding-bottom: 6px;
+}
+
+.patent-bricks{
+	position: absolute;
+	bottom: 10em;
+	left: 0em;
+}
+.patent-brick{
+	position: absolute;
+	/* Must be overloaded by each brick to be properly positioned */
+	bottom: 0;
+	left: 0;
+	width: var(--brick-width);
+	height: var(--brick-height);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	/* Must be overloaded by each brick to be properly positioned */
+	color: var(--brick-color-default);
+	background-color: var(--brick-bg-color-default);
+
+	&::before{
+		content: "";
+		position: absolute;
+		top: calc(-1 * #{$brick-knob-height});
+		width: 100%;
+		height: $brick-knob-height;
+		background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-default) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+		background-repeat: repeat;
+		background-position: calc(#{$brick-knob-width} / 2) 0px;
+	}
+
+	&#patent-brick-php{
+		color: var(--brick-color-php);
+		background-color: var(--brick-bg-color-php);
+		&::before{
+			background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-php) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
 		}
-
-		.patent-topics{
-			.patent-topic{
-				position: absolute;
-				/* Must be overloaded by each topic to be properly positioned */
-				top: 0;
-				left: 0;
-			}
-			#patent-topic-team {
-				left: 221px;
-				top: unset;
-				bottom: -20px;
-			}
-			#patent-topic-human-experience {
-				top: 0;
-				right: 4px;
-				left: unset;
-			}
-			#patent-topic-products {
-				left: 20px;
-				top: 233px;
-			}
-
+	}
+	&#patent-brick-xml{
+		left: var(--brick-width);
+		color: var(--brick-color-xml);
+		background-color: var(--brick-bg-color-xml);
+		&::before{
+			background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-xml) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
 		}
-
-		.patent-bricks{
-			position: absolute;
-			bottom: 10em;
-			left: 0em;
-
-			.patent-brick{
-				position: absolute;
-				/* Must be overloaded by each brick to be properly positioned */
-				bottom: 0;
-				left: 0;
-				width: var(--brick-width);
-				height: var(--brick-height);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-weight: 500;
-				/* Must be overloaded by each brick to be properly positioned */
-				color: var(--brick-color-default);
-				background-color: var(--brick-bg-color-default);
-
-				&::before{
-					content: "";
-					position: absolute;
-					top: calc(-1 * #{$brick-knob-height});
-					width: 100%;
-					height: $brick-knob-height;
-					background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-default) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
-					background-repeat: repeat;
-					background-position: calc(#{$brick-knob-width} / 2) 0px;
-				}
-
-				&#patent-brick-php{
-					color: var(--brick-color-php);
-					background-color: var(--brick-bg-color-php);
-					&::before{
-						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-php) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
-					}
-				}
-				&#patent-brick-xml{
-					left: var(--brick-width);
-					color: var(--brick-color-xml);
-					background-color: var(--brick-bg-color-xml);
-					&::before{
-						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-xml) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
-					}
-				}
-				&#patent-brick-js{
-					bottom: var(--brick-height);
-					left: calc(var(--brick-width) / 2);
-					color: var(--brick-color-js);
-					background-color: var(--brick-bg-color-js);
-					&::before{
-						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-js) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
-					}
-				}
-				&#patent-brick-tests{
-					transform: rotateZ(35deg);
-					left: calc(var(--brick-width) * 2 * 0.9);
-					bottom: calc(var(--brick-height) * 0.625);
-					color: var(--brick-color-tests);
-					background-color: var(--brick-bg-color-tests);
-					&::before{
-						background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-tests) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
-					}
-				}
-			}
+	}
+	&#patent-brick-js{
+		bottom: var(--brick-height);
+		left: calc(var(--brick-width) / 2);
+		color: var(--brick-color-js);
+		background-color: var(--brick-bg-color-js);
+		&::before{
+			background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-js) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
 		}
+	}
+	&#patent-brick-tests{
+		transform: rotateZ(35deg);
+		left: calc(var(--brick-width) * 2 * 0.9);
+		bottom: calc(var(--brick-height) * 0.625);
+		color: var(--brick-color-tests);
+		background-color: var(--brick-bg-color-tests);
+		&::before{
+			background-image: repeating-linear-gradient(90deg, var(--brick-bg-color-tests) 0px #{$brick-knob-width}, transparent #{$brick-knob-width} calc(#{$brick-knob-width} + #{$brick-knob-spacing}));
+		}
+	}
+}
 
-		.patent-qrcode,
-		.patent-company{
-			position: absolute;
-			bottom: 0;
-			padding: 0.5em;
-			background-color: $patent-bg-color;
-			border: var(--patent-border);
-			border-bottom: none;
-		}
-		.patent-qrcode{
-			left: 0;
-			width: 10em;
-			border-left: none;
+.patent-qrcode,
+.patent-company{
+	position: absolute;
+	bottom: 0;
+	padding: 0.5em;
+	background-color: $patent-bg-color;
+	border: var(--patent-border);
+	border-bottom: none;
+}
+.patent-qrcode{
+	left: 0;
+	width: 10em;
+	border-left: none;
 
-			img{
-				width: 100%;
-				background-color: $patent-qr-code-img-bg;
-			}
-		}
-		.patent-company{
-			right: 0;
-			border-right: none;
-		}
+	img{
+		width: 100%;
+		background-color: $patent-qr-code-img-bg;
+	}
+}
+.patent-company{
+	right: 0;
+	border-right: none;
+}
+.github-link {
+	display: inline-flex;
+	align-items: center;
+
+	img {
+		margin-right: 0.8rem;
 	}
 }

@@ -17,9 +17,12 @@
   --brick-color-tests: #444;
   --brick-bg-color-tests: #fff; }
 
-a:hover, a:focus, a:visited {
+a {
   color: white;
   text-decoration: none; }
+  a:hover, a:focus, a:visited {
+    color: white;
+    text-decoration: none; }
 
 .container-fluid {
   height: 100vh;

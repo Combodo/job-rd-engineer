@@ -138,6 +138,7 @@ a:hover, a:focus, a:visited {
   position: absolute;
   bottom: 10em;
   left: 0em;
+  text-shadow: none;
 }
 
 .patent-brick {

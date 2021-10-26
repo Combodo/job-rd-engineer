@@ -45,6 +45,7 @@ a:hover, a:focus, a:visited {
   color: #fff;
   background-color: #447ec5;
   border: solid 4px #bbd1ed47;
+  text-shadow: 2px 0 0 #447ec5, -2px 0 0 #447ec5, 0 2px 0 #447ec5, 0 -2px 0 #447ec5, 1px 1px #447ec5, -1px -1px 0 #447ec5, 1px -1px 0 #447ec5, -1px 1px 0 #447ec5;
 }
 
 .patent-header {
@@ -137,6 +138,7 @@ a:hover, a:focus, a:visited {
   position: absolute;
   bottom: 10em;
   left: 0em;
+  text-shadow: none;
 }
 
 .patent-brick {

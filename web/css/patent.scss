@@ -62,6 +62,7 @@ a {
 	color: $patent-color;
 	background-color: $patent-bg-color;
 	border: solid 4px #bbd1ed47;
+	text-shadow: 2px 0 0 $patent-bg-color, -2px 0 0 $patent-bg-color, 0 2px 0 $patent-bg-color, 0 -2px 0 $patent-bg-color, 1px 1px $patent-bg-color, -1px -1px 0 $patent-bg-color, 1px -1px 0 $patent-bg-color, -1px 1px 0 $patent-bg-color;
 }
 
 .patent-header{
@@ -152,6 +153,7 @@ a {
 	position: absolute;
 	bottom: 10em;
 	left: 0em;
+	text-shadow: none;
 }
 .patent-brick{
 	position: absolute;
